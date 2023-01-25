@@ -733,16 +733,29 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="product-buttons d-flex justify-content-center">
-                                                                                        <form action="index.php?action=product-cart" method="post" class="formAddToCart">
+                                                                                        <form action="index.php?action=product-detail&id=<?php echo $set['id'] ?>" method="post" class="formAddToCart">
 
-                                                                                            <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                                            <button class="add-to-cart" data-button-action="add-to-cart">
                                                                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                                            </a>
+                                                                                            </button>
 
                                                                                         </form>
-                                                                                        <a class="addToWishlist" href="index.php?action=user-wishlist" data-rel="1" onclick="">
-                                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                                        </a>
+                                                                                        <form action="index.php?action=yeuthich&page=home" method="post">
+
+                                                                                            <input type="hidden" name="mahh" value="<?php echo $set['id']; ?>">
+                                                                                            <input type="hidden" name="name" value="<?php echo $set['tensp']; ?>">
+                                                                                            <input type="hidden" name="mausac" value="<?php echo $set['mausac']; ?>">
+                                                                                            <input type="hidden" name="size" value="<?php echo $set['size']; ?>">
+                                                                                            <input type="hidden" name="dongia" value="<?php if ($set['giamgia'] > 0) {
+                                                                                                                                            echo $set['giamgia'];
+                                                                                                                                        } else {
+                                                                                                                                            echo $set['dongia'];
+                                                                                                                                        } ?>">
+
+                                                                                            <button class="addToWishlist" data-rel="1">
+                                                                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                                            </button>
+                                                                                        </form>
                                                                                         <a href="index.php?action=product-detail&id=<?php echo $set['id'] ?>" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                                                                         </a>
@@ -862,15 +875,28 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="product-buttons d-flex justify-content-center">
-                                                                                        <form action="#" method="post" class="formAddToCart">
-                                                                                            <input type="hidden" name="id_product" value="1">
-                                                                                            <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                                        <form action="index.php?action=product-detail&id=<?php echo $set['id'] ?>" method="post" class="formAddToCart">
+
+                                                                                            <button class="add-to-cart" href="#" data-button-action="add-to-cart">
                                                                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                                            </a>
+                                                                                            </button>
                                                                                         </form>
-                                                                                        <a class="addToWishlist" href="index.php?action=user-wishlist" data-rel="1" onclick="">
-                                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                                        </a>
+                                                                                        <form action="index.php?action=yeuthich&page=home" method="post">
+
+                                                                                            <input type="hidden" name="mahh" value="<?php echo $set['id']; ?>">
+                                                                                            <input type="hidden" name="name" value="<?php echo $set['tensp']; ?>">
+                                                                                            <input type="hidden" name="mausac" value="<?php echo $set['mausac']; ?>">
+                                                                                            <input type="hidden" name="size" value="<?php echo $set['size']; ?>">
+                                                                                            <input type="hidden" name="dongia" value="<?php if ($set['giamgia'] > 0) {
+                                                                                                                                            echo $set['giamgia'];
+                                                                                                                                        } else {
+                                                                                                                                            echo $set['dongia'];
+                                                                                                                                        } ?>">
+
+                                                                                            <button class="addToWishlist" data-rel="1">
+                                                                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                                            </button>
+                                                                                        </form>
                                                                                         <a href="index.php?action=product-detail&id=<?php echo $set['id'] ?>" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                                                                         </a>
@@ -1031,18 +1057,29 @@
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="product-buttons d-flex justify-content-center">
-                                                                                            <form action="index.php?action=product-cart" method="post" class="formAddToCart">
+                                                                                            <form action="index.php?action=product-detail&id=<?php echo $set['id'] ?>" method="post" class="formAddToCart">
 
-                                                                                                <!-- <a class="add-to-cart" href="#" data-button-action="add-to-cart"> -->
-                                                                                                <!-- </a> -->
-                                                                                                <button>
+                                                                                                <button class="add-to-cart" href="#" data-button-action="add-to-cart">
                                                                                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                                                 </button>
-
+                                                                                                
                                                                                             </form>
-                                                                                            <a class="addToWishlist" href="index.php?action=user-wishlist" data-rel="1" onclick="">
-                                                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                                            </a>
+                                                                                            <form action="index.php?action=yeuthich&page=home" method="post">
+
+                                                                                                <input type="hidden" name="mahh" value="<?php echo $set['id']; ?>">
+                                                                                                <input type="hidden" name="name" value="<?php echo $set['tensp']; ?>">
+                                                                                                <input type="hidden" name="mausac" value="<?php echo $set['mausac']; ?>">
+                                                                                                <input type="hidden" name="size" value="<?php echo $set['size']; ?>">
+                                                                                                <input type="hidden" name="dongia" value="<?php if ($set['giamgia'] > 0) {
+                                                                                                                                                echo $set['giamgia'];
+                                                                                                                                            } else {
+                                                                                                                                                echo $set['dongia'];
+                                                                                                                                            } ?>">
+
+                                                                                                <button class="addToWishlist" data-rel="1">
+                                                                                                    <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                                                </button>
+                                                                                            </form>
                                                                                             <a href="index.php?action=product-detail&id=<?php echo $set['id'] ?>" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                                                                             </a>
@@ -1069,14 +1106,14 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="effect">
-                                                <a href="#">
+                                                <a href="index.php?action=shop">
                                                     <img class="img-fluid" src="General/img/home/effect3.jpg" alt="banner-1" title="banner-1">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="effect">
-                                                <a href="#">
+                                                <a href="index.php?action=shop">
                                                     <img class="img-fluid" src="General/img/home/effect4.jpg" alt="banner-2" title="banner-2">
                                                 </a>
                                             </div>
@@ -1211,13 +1248,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=35">
                                                                         <img src="General/img/home/icon-tolltip2.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Lorem ipsum dolor</a>
+                                                                        <a href="index.php?action=product-detail&id=35">Lorem ipsum dolor</a>
                                                                     </div>
                                                                     <div class="rating">
                                                                         <div class="star-content">
@@ -1232,7 +1269,7 @@
                                                                         £52.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=35">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1244,13 +1281,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=21">
                                                                         <img src="General/img/home/icon-tolltip1.jpg" alt="contrary-to-popular-belief">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Sed vel malesuada
+                                                                        <a href="index.php?action=product-detail&id=21">Sed vel malesuada
                                                                             lorem</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1266,7 +1303,7 @@
                                                                         £68.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=21">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1289,13 +1326,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=34">
                                                                         <img src="General/img/product/34.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Lorem ipsum dolor
+                                                                        <a href="index.php?action=product-detail&id=34">Lorem ipsum dolor
                                                                             sit</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1311,7 +1348,7 @@
                                                                         £45.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=34">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1323,13 +1360,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=19">
                                                                         <img src="General/img/home/icon-tolltip6.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Lorem ipsum dolor</a>
+                                                                        <a href="index.php?action=product-detail&id=19">Lorem ipsum dolor</a>
                                                                     </div>
                                                                     <div class="rating">
                                                                         <div class="star-content">
@@ -1344,7 +1381,7 @@
                                                                         £21.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=19">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1356,13 +1393,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=7">
                                                                         <img src="General/img/home/icon-tolltip4.jpg" alt="mug-the-adventure-begins">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Sed vel malesuada
+                                                                        <a href="index.php?action=product-detail&id=7">Sed vel malesuada
                                                                             lorem</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1378,7 +1415,7 @@
                                                                         £11.90
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=7">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1403,13 +1440,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=7">
                                                                         <img src="General/img/home/icon-tolltip4.jpg" alt="mug-the-adventure-begins">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Sed vel malesuada
+                                                                        <a href="index.php?action=product-detail&id=7">Sed vel malesuada
                                                                             lorem</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1425,7 +1462,7 @@
                                                                         £11.90
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=7">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1437,13 +1474,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=13">
                                                                         <img src="General/img/product/13.jpg" alt="brown-bear-vector-graphics">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Orci varius natoque
+                                                                        <a href="index.php?action=product-detail&id=13">Orci varius natoque
                                                                             penatibus</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1459,7 +1496,7 @@
                                                                         £9.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=13">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1471,13 +1508,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=19">
                                                                         <img src="General/img/home/icon-tolltip6.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Etiam congue nisl
+                                                                        <a href="index.php?action=product-detail&id=19">Etiam congue nisl
                                                                             nec</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1493,7 +1530,7 @@
                                                                         £16.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=19">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1519,13 +1556,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=39">
                                                                         <img src="General/img/home/icon-tolltip10.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Nam semper a ligula
+                                                                        <a href="index.php?action=product-detail&id=39">Nam semper a ligula
                                                                             nec</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1541,7 +1578,7 @@
                                                                         £41.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=39">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1553,13 +1590,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=37">
                                                                         <img src="General/img/home/icon-tolltip8.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Donec accumsan lectus
+                                                                        <a href="index.php?action=product-detail&id=37">Donec accumsan lectus
                                                                             ut</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1575,7 +1612,7 @@
                                                                         £11.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=37">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1587,13 +1624,13 @@
                                                         <div class="content-lookbook">
                                                             <div class="main-lookbook  d-flex align-items-center">
                                                                 <div class="item-thumb">
-                                                                    <a href="index.php?action=product-detail">
+                                                                    <a href="index.php?action=product-detail&id=38">
                                                                         <img src="General/img/home/icon-tolltip9.jpg" alt="lorem-ipsum-dolor-sit-amet">
                                                                     </a>
                                                                 </div>
                                                                 <div class="content-bottom">
                                                                     <div class="item-title">
-                                                                        <a href="index.php?action=product-detail">Fusce quis felis
+                                                                        <a href="index.php?action=product-detail&id=38">Fusce quis felis
                                                                             libero</a>
                                                                     </div>
                                                                     <div class="rating">
@@ -1609,7 +1646,7 @@
                                                                         £11.00
                                                                     </div>
                                                                     <div class="readmore">
-                                                                        <a href="index.php?action=product-detail">View More</a>
+                                                                        <a href="index.php?action=product-detail&id=38">View More</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1633,7 +1670,7 @@
                                         <div class="col-md-4">
                                             <div class="item-post">
                                                 <div class="thumbnail-img">
-                                                    <a href="index.php?action=blog-detail">
+                                                    <a href="index.php?action=about-us">
                                                         <img src="General/img/home/home1-post1.jpg" alt="img">
                                                     </a>
                                                 </div>
@@ -1649,7 +1686,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="post-title">
-                                                        <a href="index.php?action=blog-detail">Lorem ipsum dolor sit amet</a>
+                                                        <a href="index.php?action=about-us">Lorem ipsum dolor sit amet</a>
                                                     </div>
                                                     <div class="post-desc">
                                                         Lorem ipsum dolor sit amet, consecte adipis cing elit, sed do
@@ -1661,7 +1698,7 @@
                                         <div class="col-md-4">
                                             <div class="item-post">
                                                 <div class="thumbnail-img">
-                                                    <a href="index.php?action=blog-detail">
+                                                    <a href="index.php?action=about-us">
                                                         <img src="General/img/home/home1-post2.jpg" alt="img">
                                                     </a>
                                                 </div>
@@ -1677,7 +1714,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="post-title">
-                                                        <a href="index.php?action=blog-detail">Lorem ipsum dolor sit amet</a>
+                                                        <a href="index.php?action=about-us">Lorem ipsum dolor sit amet</a>
                                                     </div>
                                                     <div class="post-desc">
                                                         Lorem ipsum dolor sit amet, consecte adipis cing elit, sed do
@@ -1689,7 +1726,7 @@
                                         <div class="col-md-4">
                                             <div class="item-post">
                                                 <div class="thumbnail-img">
-                                                    <a href="index.php?action=blog-detail">
+                                                    <a href="index.php?action=about-us">
                                                         <img src="General/img/home/home1-post3.jpg" alt="img">
                                                     </a>
                                                 </div>
@@ -1705,7 +1742,7 @@
                                                         </span>
                                                     </div>
                                                     <div class="post-title">
-                                                        <a href="index.php?action=blog-detail">Lorem ipsum dolor sit amet</a>
+                                                        <a href="index.php?action=about-us">Lorem ipsum dolor sit amet</a>
                                                     </div>
                                                     <div class="post-desc">
                                                         Lorem ipsum dolor sit amet, consecte adipis cing elit, sed do
@@ -1726,42 +1763,42 @@
                                                 <div id="manufacture" class="owl-carousel owl-theme owl-loaded owl-drag">
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo1.jpg" alt="img" />
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo2.jpg" alt="img" />
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo3.jpg" alt="img" />
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo4.jpg" alt="img" />
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo5.jpg" alt="img" />
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="item">
                                                         <div class="logo-manu">
-                                                            <a href="#" title="view products">
+                                                            <a href="index.php?action=home" title="view products">
                                                                 <img class="img-fluid" src="General/img/home/icon-logo6.jpg" alt="img" />
                                                             </a>
                                                         </div>

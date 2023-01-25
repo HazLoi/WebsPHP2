@@ -20,19 +20,19 @@
                             <div class="block-content">
                                 <ul>
                                     <li>
-                                        <a href="#">About Us</a>
+                                        <a href="index.php?action=home">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#">Reasons to shop</a>
+                                        <a href="index.php?action=home">Reasons to shop</a>
                                     </li>
                                     <li>
-                                        <a href="#">What our customers say</a>
+                                        <a href="index.php?action=home">What our customers say</a>
                                     </li>
                                     <li>
-                                        <a href="#">Meet the teaml</a>
+                                        <a href="index.php?action=home">Meet the teaml</a>
                                     </li>
                                     <li>
-                                        <a href="#">Contact our buyers</a>
+                                        <a href="index.php?action=home">Contact our buyers</a>
                                     </li>
                                 </ul>
                             </div>
@@ -125,7 +125,7 @@
                                         <div class="social">
                                             <ul class="list-inline mb-0 justify-content-end">
                                                 <li class="list-inline-item mb-0">
-                                                    <a href="https://www.facebook.com/" target="_blank">
+                                                    <a href="https://www.facebook.com/profile.php?id=100050132470694" target="_blank">
                                                         <i class="fa fa-facebook"></i>
                                                     </a>
                                                 </li>

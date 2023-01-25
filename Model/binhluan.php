@@ -21,7 +21,7 @@ class binhluan
     {
         $db = new connect();
 
-        $select = "SELECT * FROM binhluan WHERE mahh = $mahh";
+        $select = "SELECT * FROM binhluan WHERE mahh = $mahh ORDER BY id DESC";
 
         $result = $db->getlist($select);
         return $result;

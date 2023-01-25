@@ -48,7 +48,10 @@
                                                 <th class="first_item">Email:</th>
                                                 <td><?php echo $_SESSION['email'] ?></td>
                                             </tr>
-
+                                            <tr>
+                                                <th><a href="index.php?action=user-reset-password" class="btn bg-danger text-white">Reset Password</a></th>
+                                                <td></td>
+                                            </tr>
 
                                         <?php } ?>
                                     </tbody>
@@ -64,9 +67,11 @@
                                 </h4>
                                 <?php
                                 $sp = new user();
-
-                                $result = $sp->getCheckout($_SESSION['makh']);
-
+                                if (isset($_GET['page'])) {
+                                    $result = $sp->getCheckout($_SESSION['makh'], $_GET['page']);
+                                } else {
+                                    $result = $sp->getCheckout($_SESSION['makh'], 1);
+                                }
                                 ?>
                                 <div>
                                     <table class="table ">
@@ -80,6 +85,11 @@
                                             <th>Ngày mua</th>
                                         </tr>
                                         <?php if ($result) {
+                                            $check = new user();
+
+                                            $x = $check->getNumCheckout($_SESSION['makh']);
+
+                                            $numCheckout = ceil($x / 5);
                                             while ($set = $result->fetch()) : ?>
                                                 <tr>
 
@@ -97,10 +107,36 @@
                                         <?php } ?>
                                     </table>
                                 </div>
-
+                                <div class="" style="float: right">
+                                    <div>
+                                        <ul class="d-flex">
+                                            <button class="border-0 btn" style="background: aqua;">
+                                                <li>
+                                                    <a rel="prev" href="index.php?action=user-acount&page=<?php if ($_SESSION['pageAccount'] > 1) {
+                                                                                                                echo $_SESSION['pageAccount'] - 1;
+                                                                                                            } else {
+                                                                                                                echo $_SESSION['pageAccount'] = 1;
+                                                                                                            } ?>" class="previous disabled js-search-link">
+                                                        Previous
+                                                    </a>
+                                                </li>
+                                            </button>
+                                            <button class="border-0 btn" style="background: aqua; margin-left: 10px">
+                                                <li>
+                                                    <a rel="next" href="index.php?action=user-acount&page=<?php if ($_SESSION['pageAccount'] >= $numCheckout) {
+                                                                                                                echo $_SESSION['pageAccount'] = $numCheckout;
+                                                                                                            } else {
+                                                                                                                echo $_SESSION['pageAccount'] + 1;
+                                                                                                            } ?>" class="next disabled js-search-link">
+                                                        Next
+                                                    </a>
+                                                </li>
+                                            </button>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

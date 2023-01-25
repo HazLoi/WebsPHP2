@@ -31,6 +31,21 @@ switch ($action) {
 
     case 'user-acount':
         if (isset($_SESSION['makh'])) {
+            if (empty($_GET['page'])) {
+                $_SESSION['pageAccount'] = 1;
+            } elseif (isset($_GET['page'])) {
+                $check = new user();
+
+                $x = $check->getNumCheckout($_SESSION['makh']);
+
+                $numCheckout = ceil($x / 5);
+
+                $_SESSION['pageAccount'] = $_GET['page'];
+
+                $_SESSION['pageAccount'] < 1 ? $_SESSION['pageAccount'] = 1 : $_SESSION['pageAccount']--;
+
+                $_SESSION['pageAccount'] > $numCheckout ? $_SESSION['pageAccount'] = $numCheckout : $_SESSION['pageAccount']++;
+            }
             include_once "./View/user-acount.php";
         } else {
             include_once "./View/404.php";
@@ -51,6 +66,44 @@ switch ($action) {
 
     case '404':
         include_once "./View/404.php";
+        break;
+
+    case 'resetPassword':
+
+        if (empty($_POST['password']) || empty($_POST['newpassword']) || empty($_POST['renewpassword'])) {
+            echo "<script> alert('Vui lòng nhập đầy đủ thông tin để thay đổi mật khẩu') </script>";
+            echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-reset-password"/>';
+        } elseif (isset($_POST['password'])) {
+            if ($_POST['newpassword'] != $_POST['renewpassword']) {
+                echo "<script> alert('Mật khẩu nhập lại không đúng') </script>";
+                echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-reset-password"/>';
+            } else {
+                $makh = $_SESSION['makh'];
+                $mkcu = $_POST['password'];
+                $mkmoi = $_POST['newpassword'];
+
+                $mahoa1 = "!%HazKing@";
+                $mahoa2 = "!^HazHonTu*";
+                $matkhaumoi = md5($mahoa1 . $mkmoi . $mahoa2);
+                $matkhaucu = md5($mahoa1 . $mkcu . $mahoa2);
+
+                $us = new user();
+
+                $result = $us->checkPassword($makh, $matkhaucu);
+
+                if ($result) {
+                    $us->resetPassword($makh, $matkhaumoi);
+                    echo "<script> alert('Đổi mật khẩu thành công. Vui lòng đăng nhập lại!!') </script>";
+                    $user = new user();
+                    $user->logout();
+                    echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-login"/>';
+                } else {
+
+                    echo "<script> alert('Mật khẩu không đúng') </script>";
+                    echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-reset-password"/>';
+                }
+            }
+        }
         break;
 
     case 'deleteFavoriteProduct':
@@ -75,13 +128,22 @@ switch ($action) {
             $result = $favorite->checkFavoriteProduct($mahh, $makh);
             if ($result) {
                 echo "<script> alert('Sản phẩm này đã có trong mục yêu thích của bạn') </script>";
-                echo '<meta http-equiv="refresh" content="0; url=./index.php?action=shop"/>';
+                if ($_GET['page'] == "shop") {
+                    echo '<meta http-equiv="refresh" content="0; url=./index.php?action=shop"/>';
+                }
+                if ($_GET['page'] == "home") {
+                    echo '<meta http-equiv="refresh" content="0; url=./index.php?action=home"/>';
+                }
             } else {
                 $result = $favorite->addFavoriteProducts($mahh, $makh, $name, $color, $size, $money);
                 echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-wishlist"/>';
             }
         } else {
             if (isset($_GET['page']) == "shop") {
+                echo "<script> alert('Cần đăng nhập để thêm sản phẩm vào mục yêu thích') </script>";
+                echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-login"/>';
+            }
+            if (isset($_GET['page']) == "home") {
                 echo "<script> alert('Cần đăng nhập để thêm sản phẩm vào mục yêu thích') </script>";
                 echo '<meta http-equiv="refresh" content="0; url=./index.php?action=user-login"/>';
             }
@@ -99,7 +161,6 @@ switch ($action) {
 
             $cmts = new binhluan();
             $result = $cmts->insertComments($mahh, $author, $email, $comment);
-            echo `<meta http-equiv='refresh' content='0; url=./index.php?action=product-detail&id=$mahh'/>`;
         } elseif (empty($_SESSION['makh'])) {
             $mahh = $_POST['product_id'];
             $author = $_POST['name'];
@@ -108,25 +169,32 @@ switch ($action) {
 
             $cmts = new binhluan();
             $result = $cmts->insertComments($mahh, $author, $email, $comment);
-            echo '<meta http-equiv="refresh" content="0; url=./index.php?action=home"/>';
         }
-        echo `<meta http-equiv='refresh' content='0; url=./index.php?action=product-detail&id=$mahh'/>`;
-
+        if (isset($_GET['action']) == "comments" && isset($_GET['id'])) {
+            $mahh = $_GET['id'];
+            include_once "./View/product-detail.php";
+        }
         break;
 
     case 'shop':
         if (empty($_GET['page'])) {
-            $_SESSION['page'] = 1;
+            $_SESSION['pageShop'] = 1;
         } elseif (isset($_GET['page'])) {
-            $_SESSION['page'] = $_GET['page'];
+            $num = new cua_hang();
 
-            $_SESSION['page'] < 1 ? $_SESSION['page'] = 1 : $_SESSION['page']--;
+            $x = $num->getNumProducts();
 
-            $_SESSION['page'] > 5 ? $_SESSION['page'] = 5 : $_SESSION['page']++;
+            $sumNumProducts = ceil($x / 9);
+
+            $_SESSION['pageShop'] = $_GET['page'];
+
+            $_SESSION['pageShop'] < 1 ? $_SESSION['pageShop'] = 1 : $_SESSION['pageShop']--;
+
+            $_SESSION['pageShop'] > $sumNumProducts ? $_SESSION['pageShop'] = $sumNumProducts : $_SESSION['pageShop']++;
         }
 
         $sp = new cua_hang();
-        $result = $sp->getProductForPage($_SESSION['page']);
+        $result = $sp->getProductForPage($_SESSION['pageShop']);
 
 
         include_once "./View/shop.php";
@@ -151,11 +219,8 @@ switch ($action) {
             $size = $_POST['size'];
             $sp = new gioHang();
             $result = $sp->addProducts($id, $quantity, $mausac, $size);
-
-            if ($result) {
-                echo '<meta http-equiv="refresh" content="0; url=./index.php?action=product-cart"/>';
-            }
         }
+
         include_once "./View/product-cart.php";
         break;
 
@@ -302,6 +367,10 @@ switch ($action) {
                 $hoadon->updateOrderTotal($mahd, $total);
             }
             echo '<meta http-equiv="refresh" content="0; url=./index.php?action=home"/>';
+            // $msg = "Cảm ơn quý khách đã mua hàng (>.<)";
+            // $msg = wordwrap($msg, 70);
+
+            // mail($email, "Hello", $msg, "From: admin@gmail.com");
         }
         break;
 }

@@ -5,6 +5,9 @@
     } elseif ($_GET['action'] == 'searchProduct') {
         $ac = 1;
     }
+    $num = new cua_hang();
+    $x = $num->getNumProducts();
+    $sumNumProducts = ceil($x / 9);
     ?>
 
     <body id="product-sidebar-left" class="product-grid-sidebar-left">
@@ -37,151 +40,6 @@
                             <div class="container">
                                 <div class="content">
                                     <div class="row">
-                                        <!-- <div class="sidebar-3 sidebar-collection col-lg-3 col-md-4 col-sm-4">
-
-                                           
-                                            <div class="sidebar-block">
-                                                <div class="title-block">Categories</div>
-                                                <div class="block-content">
-                                                    <div class="cateTitle hasSubCategory open level1">
-                                                        <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#livingroom" aria-expanded="false" role="status">
-                                                            <i class="zmdi zmdi-minus"></i>
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </span>
-                                                        <a class="cateItem" href="#">Living Room</a>
-                                                        <div class="subCategory collapse" id="livingroom" aria-expanded="true" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">Side Table</a>
-                                                                <div class="subCategory collapse" id="subCategory-fruits" aria-expanded="true" role="status">
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">Side Table</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">FIREPLACE</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">FIREPLACE</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">floor lamp</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">ottoman</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">armchair</a>
-                                                                    </div>
-                                                                    <div class="cateTitle">
-                                                                        <a href="#" class="cateItem">cushion</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">FIREPLACE</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">FIREPLACE</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">floor lamp</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">ottoman</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">armchair</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">cushion</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cateTitle hasSubCategory open level1">
-                                                        <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bathroom" aria-expanded="false" role="status">
-                                                            <i class="zmdi zmdi-minus"></i>
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </span>
-                                                        <a class="cateItem" href="#">Bathroom</a>
-                                                        <div class="subCategory collapse" id="bathroom" aria-expanded="false" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">TOMATO</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">BROCCOLI</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">CABBAGE</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">CUCUMBER</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">EGGPLANT</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cateTitle hasSubCategory open level1">
-                                                        <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#diningroom" aria-expanded="false" role="status">
-                                                            <i class="zmdi zmdi-minus"></i>
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </span>
-                                                        <a class="cateItem" href="#">Dining Rooom</a>
-                                                        <div class="subCategory collapse" id="diningroom" aria-expanded="true" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">DRY BREAD</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">BREAD SLICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">FRENCH BREAD</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">BLACK BREAD</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cateTitle hasSubCategory open level1">
-                                                        <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom" aria-expanded="false" role="status">
-                                                            <i class="zmdi zmdi-minus"></i>
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </span>
-                                                        <a class="cateItem" href="#">BedRoom</a>
-                                                        <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">APPLE JUICES</a>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="cateTitle hasSubCategory open level1">
-                                                        <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#kitchen" aria-expanded="false" role="status">
-                                                            <i class="zmdi zmdi-minus"></i>
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </span>
-                                                        <a class="cateItem" href="#">Kitchen</a>
-                                                        <div class="subCategory collapse" id="kitchen" aria-expanded="true" role="status">
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                            </div>
-                                                            <div class="cateTitle">
-                                                                <a href="#" class="cateItem">APPLE JUICES</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div> -->
                                         <div class="col-sm-12 col-lg-12 col-md-12 product-container">
                                             <h1>Shop</h1>
                                             <div class="js-product-list-top firt nav-top">
@@ -196,10 +54,10 @@
                                                             </li>
                                                         </ul>
                                                         <div class="hidden-sm-down total-products">
-                                                            <p>There are 12 products.</p>
+                                                            <p>There are 9 products.</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col col-xs-12">
+                                                    <!-- <div class="col col-xs-12">
                                                         <div class="d-flex sort-by-row justify-content-lg-end justify-content-md-end">
 
                                                             <div class="products-sort-order dropdown">
@@ -212,7 +70,7 @@
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="tab-content product-items">
@@ -409,7 +267,9 @@
                                                 <div class="js-product-list-top ">
                                                     <div class="d-flex justify-content-around row">
                                                         <div class="showing col col-xs-12">
-                                                            <?php if (isset($_GET['page'])) { ?>
+                                                            <?php
+                                                            if (isset($_GET['page'])) {                                                             
+                                                            ?>
                                                                 <span>Page <?php echo $_GET['page'] ?></span>
                                                             <?php } else { ?>
                                                                 <span></span>
@@ -418,10 +278,10 @@
                                                         <div class="page-list col col-xs-12">
                                                             <ul>
                                                                 <li>
-                                                                    <a rel="prev" href="index.php?action=shop&page=<?php if ($_SESSION['page'] > 1) {
-                                                                                                                        echo $_SESSION['page'] - 1;
+                                                                    <a rel="prev" href="index.php?action=shop&page=<?php if ($_SESSION['pageShop'] > 1) {
+                                                                                                                        echo $_SESSION['pageShop'] - 1;
                                                                                                                     } else {
-                                                                                                                        echo $_SESSION['page'] = 1;
+                                                                                                                        echo $_SESSION['pageShop'] = 1;
                                                                                                                     } ?>" class="previous disabled js-search-link">
                                                                         Previous
                                                                     </a>
@@ -442,10 +302,10 @@
                                                                     </a>
                                                                 </li>
                                                                 <li>
-                                                                    <a rel="next" href="index.php?action=shop&page=<?php if ($_SESSION['page'] >= 5) {
-                                                                                                                        echo $_SESSION['page'] = 5;
+                                                                    <a rel="next" href="index.php?action=shop&page=<?php if ($_SESSION['pageShop'] >= $sumNumProducts) {
+                                                                                                                        echo $_SESSION['pageShop'] = $sumNumProducts;
                                                                                                                     } else {
-                                                                                                                        echo $_SESSION['page'] + 1;
+                                                                                                                        echo $_SESSION['pageShop'] + 1;
                                                                                                                     } ?>" class="next disabled js-search-link">
                                                                         Next
                                                                     </a>

@@ -86,14 +86,17 @@
                                                     ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <tr>
-                                        <td colspan="3" class="d-flex justify-content-center">
-                                            <div class="cart-button">
-                                                <a href="index.php?action=product-cart" title="View Cart">View Cart</a>
-                                                <a href="index.php?action=product-checkout" title="Checkout">Checkout</a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    if (isset($_SESSION['cartProduct']) && count($_SESSION['cartProduct']) > 0) { ?>
+                                        <tr>
+                                            <td colspan="3" class="d-flex justify-content-center">
+                                                <div class="cart-button">
+                                                    <a href="index.php?action=product-cart" title="View Cart">View Cart</a>
+                                                    <a href="index.php?action=product-checkout" title="Checkout">Checkout</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
                         </div>
@@ -179,12 +182,15 @@
                                         </a>
                                     </div>
 
-                                    <div>
-                                        <a class="check-out" href="index.php?action=product-checkout" rel="nofollow" title="Checkout">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <span>Checkout</span>
-                                        </a>
-                                    </div>
+                                    <?php
+                                    if (isset($_SESSION['cartProduct']) && count($_SESSION['cartProduct']) > 0) { ?>
+                                        <div>
+                                            <a class="check-out" href="index.php?action=product-checkout" rel="nofollow" title="Checkout">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <span>Checkout</span>
+                                            </a>
+                                        </div>
+                                    <?php }  ?>
 
                                     <div>
                                         <a href="index.php?action=user-wishlist" title="My Wishlists">
@@ -316,14 +322,18 @@
                                                 </tr>
 
                                             <?php } ?>
-                                            <tr>
-                                                <td colspan="3" class="d-flex justify-content-center">
-                                                    <div class="cart-button">
-                                                        <a href="index.php?action=product-cart" title="View Cart">View Cart</a>
-                                                        <a href="index.php?action=product-checkout" title="Checkout">Checkout</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            if (isset($_SESSION['cartProduct']) && count($_SESSION['cartProduct']) > 0) { ?>
+                                                <tr>
+                                                    <td colspan="3" class="d-flex justify-content-center">
+                                                        <div class="cart-button">
+
+                                                            <a href="index.php?action=product-cart" title="View Cart">View Cart</a>
+                                                            <a href="index.php?action=product-checkout" title="Checkout">Checkout</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>

@@ -3,10 +3,12 @@
     <body id="product-detail">
         <?php
         if (isset($_GET["id"])) {
+
             $id = $_GET['id'];
-            //
+
             $sp = new cua_hang();
             $result = $sp->getProductId($id);
+
             $anhsp = $result['anhsp'];
             $tensp = $result['tensp'];
             $dongia = $result['dongia'];
@@ -17,6 +19,7 @@
             $trangthai = $result['trangthai'];
             $mausac = $result['mausac'];
             $size = $result['size'];
+            
         }
         ?>
         <!-- main content -->
@@ -501,25 +504,25 @@
 
                                                         <div id="review" class="tab-pane fade">
 
+                                                            <div style="overflow-y: auto; height: 500px">
+                                                                <?php
 
-                                                            <?php
+                                                                $cmt = new binhluan();
 
-                                                            $cmt = new binhluan();
+                                                                $result = $cmt->getProductComments($_GET['id']);
+                                                                if ($result) {
+                                                                    while ($set = $result->fetch()) :
+                                                                ?>
+                                                                        <div class="spr-form">
+                                                                            <div class="user-comment">
 
-                                                            $result = $cmt->getProductComments($_GET['id']);
-                                                            if ($result) {
-                                                                while ($set = $result->fetch()) :
-                                                            ?>
-                                                                    <div class="spr-form">
-                                                                        <div class="user-comment">
-
-                                                                            <div class="spr-review">
-                                                                                <div class="spr-review-header">
-                                                                                    <span class="spr-review-header-byline">
-                                                                                        <strong><?php echo $set['author'] ?></strong> -
-                                                                                        <span><?php echo $set['date'] ?></span>
-                                                                                    </span>
-                                                                                    <!-- <div class="rating">
+                                                                                <div class="spr-review">
+                                                                                    <div class="spr-review-header">
+                                                                                        <span class="spr-review-header-byline">
+                                                                                            <strong><?php echo $set['author'] ?></strong> -
+                                                                                            <span><?php echo $set['date'] ?></span>
+                                                                                        </span>
+                                                                                        <!-- <div class="rating">
                                                                                 <div class="star-content">
                                                                                     <div class="star"></div>
                                                                                     <div class="star"></div>
@@ -528,22 +531,22 @@
                                                                                     <div class="star"></div>
                                                                                 </div>
                                                                             </div> -->
+                                                                                    </div>
+                                                                                    <div class="spr-review-content">
+                                                                                        <p class="spr-review-content-body"><?php echo $set['comment'] ?></p>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="spr-review-content">
-                                                                                    <p class="spr-review-content-body"><?php echo $set['comment'] ?></p>
-                                                                                </div>
+
                                                                             </div>
-
                                                                         </div>
-                                                                    </div>
-                                                            <?php endwhile;
-                                                            } ?>
-
-                                                            <form method="post" action="index.php?action=comments">
+                                                                <?php endwhile;
+                                                                } ?>
+                                                            </div>
+                                                            <form method="post" action="index.php?action=comments&id=<?php echo $id ?>">
 
                                                                 <!-- <input type="hidden" name="review[rating]" value="3"> -->
 
-                                                                <input type="hidden" name="product_id" id="product_id" value="<?php echo $_GET['id'] ?>">
+                                                                <input type="hidden" name="product_id" id="product_id" value="<?php echo $id ?>">
 
                                                                 <h3 class="spr-form-title">Write a review</h3>
 
