@@ -33,8 +33,8 @@
     <link rel="stylesheet" href="General/libs/owl-carousel/assets/owl.carousel.min.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" type="text/css" href="General/css/style.css">
     <link rel="stylesheet" type="text/css" href="General/css/reponsive.css">
+    <link rel="stylesheet" type="text/css" href="General/css/style.css">
 </head>
 
 <body>

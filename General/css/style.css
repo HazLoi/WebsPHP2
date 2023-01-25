@@ -807,7 +807,6 @@ textarea:focus {
   margin-right: 0;
 }
 
-
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -8101,7 +8100,7 @@ footer [class~=title-block],
   border-bottom-style: solid;
 }
 
-#wrapper-site #content-wrapper #main [class~=kitchen] [class~=room],
+#wrapper-site #content-wrapper #main [class~=room],
 #home3 header [class~=header-top] #search_widget form input {
   background: none;
 }
@@ -18936,7 +18935,7 @@ footer [class~=title-block],
   border-top-color: transparent;
 }
 
-#wrapper-site #content-wrapper #main [class~=kitchen] {
+#wrapper-site #content-wrapper #main {
   background: url("../img/home/home1-background2.jpg");
 }
 
